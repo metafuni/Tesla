@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import Section from './Section'
 
 
-function Home() {
+function Home({ blurState }) {
     return (
-        <Container>
+        <Container blur={blurState}>
             <Section
                 title="Model S"
                 description="Order Online for Touchless Delivery"
@@ -64,4 +64,7 @@ const Container = styled.div`
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     overflow-x: hidden;
+    filter: ${props => props.blur ? 'blur(4px)' : 'blur(0)'};
+    opacity: ${props => props.blur ? '.6' : '1'};
+    transition: .3s;
 `

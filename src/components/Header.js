@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components'
 import CloseIcon from '@material-ui/icons/Close';
 
-function Header() {
+function Header({ setBlur }) {
     const [openMenu, setOpenMenu] = useState(false);
     return (
         <Container>
@@ -16,7 +16,7 @@ function Header() {
                 <Link to="/">
                     <Logo src="/images/logo.svg"></Logo>
                 </Link>
-                <CenterMenu>
+                <CenterMenu blur={openMenu}>
                     <Link to="/">
                         Model S
                     </Link>
@@ -43,13 +43,13 @@ function Header() {
                     <Link to="/">
                         Account
                     </Link>
-                    <MenuButton to="/" onClick={() => { setOpenMenu(true) }}>
+                    <MenuButton to="/" onClick={() => { setOpenMenu(true); setBlur() }}>
                         Menu
                     </MenuButton>
                 </RightMenu>
                 <BurgerNav show={openMenu}>
                     <CustomWrapper>
-                        <CustomClose onClick={() => { setOpenMenu(false) }} />
+                        <CustomClose onClick={() => { setOpenMenu(false); setBlur() }} />
                     </CustomWrapper>
                     <li>
                         <Link to="/">
@@ -147,6 +147,7 @@ const CenterMenu = styled.div`
     display: flex;
     align-items: center;
     font-weight: 600;
+    filter: ${props => props.blur ? 'blur(4px)' : 'blur(0)'};
     
     a {
         position: relative;
@@ -180,11 +181,39 @@ const RightMenu = styled(CenterMenu)`
     > * {
         margin-right: 5px;
     }
+
+    @media(max-width: 1200px) {
+        display: block;
+
+        a:first-child, a:nth-child(2) {
+            display: none;
+        }
+
+        a:last-child::after {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            padding: 3px 0;
+            background: rgba(0, 0, 0, .1);
+            opacity: 1;
+            filter: blur(4px);
+            border-radius: 20px;
+            transition: .3s;
+            z-index: -1;
+        }
+    }
 `
 
 const MenuButton = styled.a`
     cursor: pointer;
     margin-right: 10px;
+
+    @media(max-width: 1200px) {
+        display: fixed;
+    }
 `
 
 const BurgerNav = styled.ul`
