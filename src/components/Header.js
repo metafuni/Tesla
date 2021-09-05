@@ -43,13 +43,13 @@ function Header() {
                     <Link to="/">
                         Account
                     </Link>
-                    <MenuButton to="/" onClick={() => {setOpenMenu(true)}}>
+                    <MenuButton to="/" onClick={() => { setOpenMenu(true) }}>
                         Menu
                     </MenuButton>
                 </RightMenu>
                 <BurgerNav show={openMenu}>
                     <CustomWrapper>
-                        <CustomClose onClick={() => {setOpenMenu(false)}} />
+                        <CustomClose onClick={() => { setOpenMenu(false) }} />
                     </CustomWrapper>
                     <li>
                         <Link to="/">
@@ -149,11 +149,29 @@ const CenterMenu = styled.div`
     font-weight: 600;
     
     a {
+        position: relative;
         text-decoration: none;
         padding: 0 12px;
     }
+    a::after {
+        content: "";
+        position: absolute;
+        top: -20%;
+        left: 0;
+        width: 100%;
+        height: 140%;
+        padding: 3px 0;
+        background: grey;
+        border-radius: 20px;
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+    }
+    a:hover:after {
+        opacity: .15;
+    }
 
-    @media(max-width: 640px) {
+    @media(max-width: 1200px) {
         display: none;
     }
 `
@@ -164,7 +182,7 @@ const RightMenu = styled(CenterMenu)`
     }
 `
 
-const MenuButton = styled.div`
+const MenuButton = styled.a`
     cursor: pointer;
     margin-right: 10px;
 `
@@ -187,12 +205,21 @@ const BurgerNav = styled.ul`
     animation: ${props => props.show ? 'SlideMenu forwards .45s' : 'CloseMenu forwards .45s'};
 
     li {
-        padding: 15px 0;
+        margin: 6px 0;
+        padding: 7px 8px;
         font-weight: 600;   
         font-size: 15px;     
+        border-radius: 12px;
+        width: 100%;
+        transition: .3s;
     }
     li a {
         text-decoration: none;
+        width: 100%;
+    }
+    li:hover {
+        background: rgba(20, 20, 20, .08);
+        cursor: pointer;
     }
 `
 

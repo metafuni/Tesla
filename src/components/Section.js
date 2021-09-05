@@ -5,16 +5,18 @@ import Fade from 'react-reveal'
 function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
     return (
         <Wrap bgImage={backgroundImg}>
-            <Fade>
-                <ItemText>
-                    <Title>{title}</Title>
-                    {description &&
-                        <SubTitle>{description}</SubTitle>
-                    }
-                </ItemText>
-            </Fade>
+            <ItemText>
+                <Fade duration={3000} delay={6000} exit>
+                    <>
+                        <Title>{title}</Title>
+                        {description &&
+                            <SubTitle>{description}</SubTitle>
+                        }
+                    </>
+                </Fade>
+            </ItemText>
             <Buttons>
-                <Fade>
+                <Fade duration={3000}>
                     <ButtonGroup>
                         <LeftButton>
                             {leftBtnText}
@@ -80,11 +82,12 @@ const LeftButton = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    opacity: 0.85;
+    opacity: 0.9;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
     margin: 12px;
+    cursor: pointer;
     @media (max-width: 640px) {
         width: 90vw;
     }
