@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
+import { selectCars } from '../features/car/CarSlice'
+import { toggleMenu } from '../features/toggle/toggleSlice'
 import styled from 'styled-components'
 import CloseIcon from '@material-ui/icons/Close';
 
 function Header({ setBlur }) {
+
     const [openMenu, setOpenMenu] = useState(false);
+    const cars = useSelector(selectCars);
+    
     return (
         <Container>
             <Router>
@@ -17,7 +23,14 @@ function Header({ setBlur }) {
                     <Logo src="/images/logo.svg"></Logo>
                 </Link>
                 <CenterMenu blur={openMenu}>
-                    <Link to="/">
+                    {cars && cars.map((item, index) => {
+                        return (
+                            <Link key={index} to="/">
+                                {item.title}
+                            </Link>
+                        )
+                    })}
+                    {/* <Link to="/">
                         Model S
                     </Link>
                     <Link to="/">
@@ -34,7 +47,7 @@ function Header({ setBlur }) {
                     </Link>
                     <Link to="/">
                         Solar Panels
-                    </Link>
+                    </Link> */}
                 </CenterMenu>
                 <RightMenu>
                     <Link to="/">
