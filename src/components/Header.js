@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,7 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import { selectCars } from '../features/car/CarSlice'
-import { toggleMenu } from '../features/toggle/toggleSlice'
+import { togglerState, toggler } from '../features/toggle/toggleSlice'
 import styled from 'styled-components'
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -15,13 +15,19 @@ function Header({ setBlur }) {
 
     const [openMenu, setOpenMenu] = useState(false);
     const cars = useSelector(selectCars);
-    
+    const value = useSelector(togglerState);
+    const dispatch = useDispatch();
+
     return (
         <Container>
             <Router>
                 <Link to="/">
                     <Logo src="/images/logo.svg"></Logo>
                 </Link>
+                {/* <button onClick={() => {
+                    dispatch(toggler())
+                    console.log(value)
+                }}>TOGGLE</button> */}
                 <CenterMenu blur={openMenu}>
                     {cars && cars.map((item, index) => {
                         return (
