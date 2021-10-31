@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Home from './Home'
+import ModelS from '../ModelS'
 import { useSelector, useDispatch } from 'react-redux'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 import { selectCars } from '../features/car/CarSlice'
+import { selectMenu } from '../features/car/CarSlice'
 import { togglerState, toggler } from '../features/toggle/toggleSlice'
+
 import styled from 'styled-components'
 import CloseIcon from '@material-ui/icons/Close';
 
 function Header({ setBlur }) {
 
-    const [openMenu, setOpenMenu] = useState(false);
     const cars = useSelector(selectCars);
+    const menu = useSelector(selectMenu);
     const value = useSelector(togglerState);
     const dispatch = useDispatch();
 
@@ -24,36 +26,17 @@ function Header({ setBlur }) {
                 <Link to="/">
                     <Logo src="/images/logo.svg"></Logo>
                 </Link>
-                {/* <button onClick={() => {
-                    dispatch(toggler())
-                    console.log(value)
-                }}>TOGGLE</button> */}
-                <CenterMenu blur={openMenu}>
-                    {cars && cars.map((item, index) => {
+                <CenterMenu show={value}>
+                    <Link to="/models">
+                        Model S
+                    </Link>
+                    {cars && cars.slice(1).map((item, index) => {
                         return (
                             <Link key={index} to="/">
                                 {item.title}
                             </Link>
                         )
                     })}
-                    {/* <Link to="/">
-                        Model S
-                    </Link>
-                    <Link to="/">
-                        Model 3
-                    </Link>
-                    <Link to="/">
-                        Model X
-                    </Link>
-                    <Link to="/">
-                        Model Y
-                    </Link>
-                    <Link to="/">
-                        Solar Roof
-                    </Link>
-                    <Link to="/">
-                        Solar Panels
-                    </Link> */}
                 </CenterMenu>
                 <RightMenu>
                     <Link to="/">
@@ -62,79 +45,21 @@ function Header({ setBlur }) {
                     <Link to="/">
                         Account
                     </Link>
-                    <MenuButton to="/" onClick={() => { setOpenMenu(true); setBlur() }}>
+                    <MenuButton to="/" onClick={() => { dispatch(toggler()); setBlur() }}>
                         Menu
                     </MenuButton>
                 </RightMenu>
-                <BurgerNav show={openMenu}>
+                <BurgerNav show={value}>
                     <CustomWrapper>
-                        <CustomClose onClick={() => { setOpenMenu(false); setBlur() }} />
+                        <CustomClose onClick={() => { dispatch(toggler()); setBlur() }} />
                     </CustomWrapper>
-                    <li>
-                        <Link to="/">
-                            Existing Inventory
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Used Inventory
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Trade-In
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Test Drive
-                        </Link>
-                    </li><li>
-                        <Link to="/">
-                            Cybertruck
-                        </Link>
-                    </li><li>
-                        <Link to="/">
-                            Roadster
-                        </Link>
-                    </li><li>
-                        <Link to="/">
-                            Semi
-                        </Link>
-                    </li><li>
-                        <Link to="/">
-                            Charging
-                        </Link>
-                    </li><li>
-                        <Link to="/">
-                            Powerwall
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Commercial Energy
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Utilities
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Find Us
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Support
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            Investor Relations
-                        </Link>
-                    </li>
+                    {menu && menu.map((item, index) => {
+                        return (
+                            <li key={index} to="/">
+                                {item.title}
+                            </li>
+                        )
+                    })}
                 </BurgerNav>
             </Router>
         </Container>
@@ -166,8 +91,8 @@ const CenterMenu = styled.div`
     display: flex;
     align-items: center;
     font-weight: 600;
-    filter: ${props => props.blur ? 'blur(4px)' : 'blur(0)'};
-    
+    filter: ${props => props.show ? 'blur(0)' : 'blur(4px)'};
+
     a {
         position: relative;
         text-decoration: none;
@@ -200,6 +125,8 @@ const RightMenu = styled(CenterMenu)`
     > * {
         margin-right: 5px;
     }
+
+    filter: ${props => props.show ? 'blur(4px)' : 'blur(0)'};
 
     @media(max-width: 1200px) {
         display: block;
@@ -250,7 +177,7 @@ const BurgerNav = styled.ul`
     opacity: 0;
     z-index: 10;
     transform: translateX(100%);
-    animation: ${props => props.show ? 'SlideMenu forwards .45s' : 'CloseMenu forwards .45s'};
+    animation: ${props => props.show ? 'CloseMenu forwards .45s' : 'SlideMenu forwards .45s'};
 
     li {
         margin: 6px 0;

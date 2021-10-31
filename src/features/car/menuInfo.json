@@ -1,0 +1,58 @@
+[
+    {
+        "id": 0,
+        "title": "Existing Inventory"
+    },    
+    {
+        "id": 1,
+        "title": "Used Inventory"
+    },
+    {
+        "id": 2,
+        "title": "Trade-In"
+    },
+    {
+        "id": 3,
+        "title": "Test Drive"
+    },
+    {
+        "id": 4,
+        "title": "Cybertruck"
+    },
+    {
+        "id": 5,
+        "title": "Roadster"
+    },
+    {
+        "id": 6,
+        "title": "Semi"
+    },
+    {
+        "id": 7,
+        "title": "Charging"
+    },
+    {
+        "id": 8,
+        "title": "Powerwall"
+    },
+    {
+        "id": 9,
+        "title": "Commercial Energy"
+    },
+    {
+        "id": 10,
+        "title": "Utilities"
+    },
+    {
+        "id": 11,
+        "title": "Find Us"
+    },
+    {
+        "id": 12,
+        "title": "Support"
+    },
+    {
+        "id": 13,
+        "title": "Investor Relations"
+    }
+]

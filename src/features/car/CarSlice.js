@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import cars from './carInfo.json'
+import menu from './menuInfo.json'
 
 const initialState = {
-    cars
+    cars,
+    menu
 }
-
-console.log(initialState)
 
 const carSlice = createSlice({
     name: "car",
@@ -14,5 +14,6 @@ const carSlice = createSlice({
 })
 
 export const selectCars = state => state.car.cars
+export const selectMenu = state => state.car.menu
 
 export default carSlice.reducer
