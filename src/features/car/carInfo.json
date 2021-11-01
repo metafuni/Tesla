@@ -63,8 +63,70 @@
         "performanceSection": {
             "title": "Beyond Ludicrous",
             "description": "With the longest range and quickest acceleration of any electric vehicle in production, Model S Plaid is the highest performing sedan ever built. Both Long Range and Plaid powertrains, with updated battery architecture, are capable of back-to-back, consistent 1/4 mile runs.",
-            "image": "MS-Performance-Hero-Desktop.jpg"
+            "image": "MS-Performance-Hero-Desktop.jpg",
+            "stats": [
+                {
+                    "id": 0,
+                    "title": "1,020 hp",
+                    "description": "Peak Power"
+                },
+                {
+                    "id": 1,
+                    "title": "9.23",
+                    "description": "@155 mph 1/4 mile"
+                },
+                {
+                    "id": 2,
+                    "title": "1.99 s",
+                    "description": "0-60 mph*"
+                }
+            ]
+        },
+        "designSection": {
+            "title": "Designed of Efficiency",
+            "description": "With the lowest drag coefficient on Earth and unmatched efficiency, Model S is built for speed and range. Together with a wider body and chassis, these elements help you go down the straight or around corners quicker than ever.",
+            "image": "MS-Exterior-Hero-Desktop.jpg",
+            "stats": [
+                {
+                    "id": 0,
+                    "title": "",
+                    "description": "Performance-focused chassis"
+                },
+                {
+                    "id": 1,
+                    "title": "0.208 Cd",
+                    "description": "Lowest-drag car on Earth"
+                },
+                {
+                    "id": 2,
+                    "title": "",
+                    "description": "Refined exterior styling"
+                }
+            ]
+        },
+        "rangeSection": {
+            "title": "Go Anywhere",
+            "description": "Travel farther on a single charge than any other electric vehicle—and keep going with access to 25,000+ Superchargers globally. By combining up to 405 miles of estimated range with Tesla fast charging technology, you’ll spend less time charging and even more time on the road.",
+            "image": "MS-Range-Hero-Desktop.jpg",
+            "stats": [
+                {
+                    "id": 0,
+                    "title": "405mi",
+                    "description": "Go anywhere with up to 405 miles of estimated range on a single charge"
+                },
+                {
+                    "id": 1,
+                    "title": "200mi",
+                    "description": "Supercharge up to 200 miles in 15 minute"
+                },
+                {
+                    "id": 2,
+                    "title": "25,000+",
+                    "description": "Superchargers placed along popular routes"
+                }
+            ]
         }
+
     },
     {
         "id": 1,

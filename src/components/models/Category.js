@@ -4,39 +4,25 @@ import Fade from 'react-reveal'
 import { useSelector } from 'react-redux'
 import { selectCars } from '../../features/car/CarSlice'
 
-function Category() {
+function Category({ stats, type, title, description, image }) {
     const models = useSelector(selectCars)[0];
 
     return (
         <CategoryContainer>
-            <CategoryImage >
-            <CategoryStats>
+            <CategoryImage image={image} >
+                <CategoryStats>
                     <Fade duration={3000}>
                         <CategoryStatsGroup>
-                            <CategoryStatsItem>
-                                <CategoryStatTitle>
-                                    {models.peakPower}
-                                </CategoryStatTitle>
-                                <CategoryStatsubtitle>
-                                    {models.peakPowerSubtitle}
-                                </CategoryStatsubtitle>
-                            </CategoryStatsItem>
-                            <CategoryStatsItem>
-                                <CategoryStatTitle>
-                                    {models.quartermile}
-                                </CategoryStatTitle>
-                                <CategoryStatsubtitle>
-                                    {models.quartermileSubtitle}
-                                </CategoryStatsubtitle>
-                            </CategoryStatsItem>
-                            <CategoryStatsItem>
-                                <CategoryStatTitle>
-                                    {models.acceleration}
-                                </CategoryStatTitle>
-                                <CategoryStatsubtitle>
-                                    {models.accelerationSubtitle}
-                                </CategoryStatsubtitle>
-                            </CategoryStatsItem>
+                            {stats.map(el => (
+                                <CategoryStatsItem key={el.id}>
+                                    <CategoryStatTitle>
+                                        {el.title}
+                                    </CategoryStatTitle>
+                                    <CategoryStatsubtitle>
+                                        {el.description}
+                                    </CategoryStatsubtitle>
+                                </CategoryStatsItem>
+                            ))}
                         </CategoryStatsGroup>
                     </Fade>
                 </CategoryStats>
@@ -45,17 +31,17 @@ function Category() {
             <CategorySection>
                 <CategorySectionLeft>
                     <CategorySectionCategory>
-                        {models.type}
+                        {type}
                     </CategorySectionCategory>
                     <CategorySectionTitle>
-                        {models.performanceSection.title}
+                        {title}
                     </CategorySectionTitle>
                     <SectionButton>
                         order now
                     </SectionButton>
                 </CategorySectionLeft>
                 <CategorySectionRight>
-                        {models.performanceSection.description}
+                    {description}
                 </CategorySectionRight>
             </CategorySection>
         </CategoryContainer>
@@ -77,7 +63,7 @@ const CategoryContainer = styled.div`
 const CategoryImage = styled.div`
     width: 100vw;
     height: 70%;
-    background-image: url(./images/MS-Performance-Hero-Desktop.jpg);
+    background-image: url(./images/${props => props.image});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -136,7 +122,7 @@ const CategoryStatTitle = styled.div`
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
-    letter-spacing: -1px;
+    letter-spacing: 0px;
 `
 
 const CategoryStatsubtitle = styled.div`
