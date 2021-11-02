@@ -4,12 +4,11 @@ import Fade from 'react-reveal'
 import { useSelector } from 'react-redux'
 import { selectCars } from '../../features/car/CarSlice'
 
-function InteriorGrid() {
-    const grid = useSelector(selectCars)[0].grid;
+function Grid({ grid }) {
 
     return (
         <GridContainer>
-            <Grid>
+            <GridComponent>
                 {grid.map(el => (
                     <GridRow key={el.id}>
                             <GridImage image={el.image} />
@@ -27,12 +26,12 @@ function InteriorGrid() {
                         </GridDescription>
                     </GridRow>
                 ))}
-            </Grid>
+            </GridComponent>
         </GridContainer>
     )
 }
 
-export default InteriorGrid
+export default Grid
 
 const GridContainer = styled.div`
     width: 100vw;
@@ -42,7 +41,7 @@ const GridContainer = styled.div`
     padding: 100px 0;
 `
 
-const Grid = styled.div`
+const GridComponent = styled.div`
     max-width: 1100px;
 
     div:nth-child(2n) {
@@ -86,7 +85,7 @@ const GridImage = styled.image`
 const GridDescription = styled.div`
     width: 50%;
     height: 100%;
-    padding: 15px;
+    padding: 18px;
     display: flex;
     justify-content: flex-start;
     align-items: center;

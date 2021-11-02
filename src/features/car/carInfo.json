@@ -46,7 +46,7 @@
                 "image": "MS-Interior-Carousel-D-Desktop"
             }
         ],
-        "grid": [
+        "interiorgrid": [
             {
                 "id": 0,
                 "title": "Game from Anywhere",
@@ -70,6 +70,26 @@
                 "title": "Real Storage",
                 "description": "With front and rear trunks and fold-flat seats, Model S is a luxury car where you can fit your bike without taking the wheel off, and your luggage too.",
                 "image": "MS-Interior-Grid-D-Desktop.jpg"
+            }
+        ],
+        "exteriorgrid": [
+            {
+                "id": 0,
+                "title": "Responsive Performance",
+                "description": "Staggered, performance-focused wheels and tires keep the car planted and transfer even more power down to the road.",
+                "image": "MS-Exterior-Grid-A-Desktop.jpg"
+            },
+            {
+                "id": 1,
+                "title": "Optimized Aerodynamics",
+                "description": "Attention to detail on all exterior surfaces makes Model S the most aerodynamic production car on Earth.",
+                "image": "MS-Exterior-Grid-B-Desktop.jpg"
+            },
+            {
+                "id": 2,
+                "title": "Refined Styling",
+                "description": "Exterior design combines an iconic look with elegant proportions.",
+                "image": "MS-Exterior-Grid-C-Desktop.jpg"
             }
         ],
         "performanceSection": {
