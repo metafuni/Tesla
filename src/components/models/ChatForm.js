@@ -1,47 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { chatterState, chatter } from '../../features/chat/toggleChatSlice'
+
 import styled from 'styled-components'
 
 function ChatForm() {
+    const value = useSelector(chatterState);
+    const dispatch = useDispatch();
+
     return (
-        <ChatWindow>
-            <ChatHeader>
-                <ChatHead>
-                    <img src="./images/tsla_logo.svg" alt="tesla logo" />
-                    <h5>Chat</h5>
-                </ChatHead>
-                <CloseButton>
-                    x
-                </CloseButton>
-            </ChatHeader>
-            <ChatMain>
-                <p>There are no agents currently available. Please enter your contact information and we will get back to you.</p>
-                <FormContainer>
-                    <label for="firstname">First Name *</label>
-                    <input id="firstname" name="firstname" type="text" value="Enter your first name" required></input>
-                    <label for="lastname">Last Name *</label>
-                    <input id="lastname" name="lastname" type="text" value="Enter your last name" required></input>
-                    <label for="email">Email *</label>
-                    <input id="email" name="email" type="email" value="Enter your email address" required></input>
-                    <label for="phonenumber">Phone *</label>
-                    <input id="phonenumber" name="phonenumber" type="text" value="Enter your phone number" required></input>
-                    <label for="zipcode">Zip Code *</label>
-                    <input id="zipcode" name="zipcode" type="text" value="Enter your zip code" required></input>
-                    <span>Product Interest *</span>
-                    <label for="product">Model S</label>
-                    <input id="product" name="product" type="checkbox" value="Model S" required></input>
-                    <label for="product">Model 3</label>
-                    <input id="product" name="product" type="checkbox" value="Model 3" required></input>
-                    <label for="product">Model X</label>
-                    <input id="product" name="product" type="checkbox" value="Model X" required></input>
-                    <label for="product">Model Y</label>
-                    <input id="product" name="product" type="checkbox" value="Model Y" required></input>
-                    <label for="product">Solar Panels</label>
-                    <input id="product" name="product" type="checkbox" value="Solar Panels" required></input>
-                    <label for="product">Solar Roof</label>
-                    <input id="product" name="product" type="checkbox" value="Solar Roof" required></input>
-                </FormContainer>
-            </ChatMain>
-        </ChatWindow>
+        <>
+            {value && 
+                    <ChatWindow>
+                    <ChatHeader>
+                        <ChatHead>
+                            <img src="./images/tsla_logo.svg" alt="tesla logo" />
+                            <h5>Chat</h5>
+                        </ChatHead>
+                        <CloseButton onClick={() => dispatch(chatter())}>
+                            x
+                        </CloseButton>
+                    </ChatHeader>
+                    <ChatMain>
+                        <p>There are no agents currently available. Please enter your contact information and we will get back to you.</p>
+                        <FormContainer>
+                            <label for="firstname">First Name *</label>
+                            <input id="firstname" name="firstname" type="text" placeholder="Enter your first name" required></input>
+                            <label for="lastname">Last Name *</label>
+                            <input id="lastname" name="lastname" type="text" placeholder="Enter your last name" required></input>
+                            <label for="email">Email *</label>
+                            <input id="email" name="email" type="email" placeholder="Enter your email address" required></input>
+                            <label for="phonenumber">Phone *</label>
+                            <input id="phonenumber" name="phonenumber" type="text" placeholder="Enter your phone number" required></input>
+                            <label for="zipcode">Zip Code *</label>
+                            <input id="zipcode" name="zipcode" type="text" placeholder="Enter your zip code" required></input>
+                            <span>Product Interest *</span>
+                            <div>
+                                <input id="product" name="product" type="checkbox" placeholder="Model S" required></input>
+                                <label for="product">Model S</label>
+                            </div>
+                            <div>
+                                <input id="product" name="product" type="checkbox" placeholder="Model 3" required></input>
+                                <label for="product">Model 3</label>
+                            </div>
+                            <div>
+                                <input id="product" name="product" type="checkbox" placeholder="Model X" required></input>
+                                <label for="product">Model X</label>
+                            </div>
+                            <div>
+                                <input id="product" name="product" type="checkbox" placeholder="Model Y" required></input>
+                                <label for="product">Model Y</label>
+                            </div>
+                            <div>
+                                <input id="product" name="product" type="checkbox" placeholder="Solar Panels" required></input>
+                                <label for="product">Solar Panels</label>
+                            </div>
+                            <div>
+                                <input id="product" name="product" type="checkbox" placeholder="Solar Roof" required></input>
+                                <label for="product">Solar Roof</label>
+                            </div>
+                            <label for="updates" style={{ marginTop: '15px' }}>Get Tesla Updates *</label>
+                            <select name="updates">
+                                <option value="yes" selected>Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                            <button>Request a Callback</button>
+                            <p>By clicking "Request a Callback" I agree to be contacted at the number provided and understand these calls or texts may use computer-assisted dialing or pre-recorded messages. This consent is not a condition of purchase.</p>
+                        </FormContainer>
+                    </ChatMain>
+                </ChatWindow>
+            }
+        </>
     )
 }
 
@@ -113,14 +142,46 @@ const FormContainer = styled.form`
         margin-bottom: 7px;
     }
 
-    input {
+    input, select, button {
         background: rgba(72, 72, 72, .1);
         border: none;
         border-radius: 25px;
         padding: 15px;
+        outline: none;
+        margin-bottom: 17px;
+    }
+
+    button {
+        cursor: pointer;
+        background: rgb(62, 106, 225);
+        color: white;
+        transition: .3s;
+    }
+
+    button:hover {
+        background: rgb(51, 95, 214);
+    }
+
+    span {
+        margin-bottom: 7px;
     }
 
     input:focus {
         outline: .5px solid rgba(72, 72, 72, .3);
+    }
+
+    div {        
+        input {
+            margin: 10px 10px 10px 0;
+        }
+    }
+
+    input[type=checkbox] {
+        transform: scale(2);
+    }
+
+    p {
+        font-size: 12px;
+        font-style: italic;
     }
 `

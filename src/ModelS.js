@@ -5,6 +5,7 @@ import Interior from './components/models/Interior'
 import InteriorCarousel from './components/models/InteriorCarousel'
 import Grid from './components/models/Grid'
 import Category from './components/models/Category'
+import Specs from './components/models/Specs'
 import Order from './components/models/Order'
 
 import { useSelector } from 'react-redux'
@@ -48,6 +49,7 @@ function ModelS() {
                 description={models.rangeSection.description} 
                 image={models.rangeSection.image} 
             />
+            <Specs />
             <Order />
         </>
     )

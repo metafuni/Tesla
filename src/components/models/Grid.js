@@ -72,7 +72,7 @@ const GridRow = styled.div`
     width: 100%;
 `
 
-const GridImage = styled.image`
+const GridImage = styled.div`
     width: 50%;
     height: 330px;
     background-image: url(./images/${props => props.image});

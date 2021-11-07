@@ -27,6 +27,7 @@ const OrderContainer = styled.div`
     width: 100vw;
     height: 100vh;
     background: white;
+    padding-top: 30px;
 
     @media (max-width: 760px) {
         flex-direction: column;

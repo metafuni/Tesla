@@ -157,6 +157,127 @@
                     "description": "Superchargers placed along popular routes"
                 }
             ]
+        },
+        "specs": {
+            "models": {
+                "left": [
+                    {
+                        "id": 0,
+                        "title": "Range",
+                        "description": "405 mi (est.)"
+                    },
+                    {
+                        "id": 1,
+                        "title": "Peak Power",
+                        "description": "670 hp"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Wheels",
+                        "description": "19' or 21'"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Cargo",
+                        "description": "28 cu ft"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Acceleration",
+                        "description": "3.1 s 0-60 mph"
+                    }
+                ],
+                "right": [
+                    {
+                        "id": 0,
+                        "title": "Top Speed",
+                        "description": "155 mph"
+                    },
+                    {
+                        "id": 1,
+                        "title": "Drag Coefficient",
+                        "description": "0.208 Cd"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Weight",
+                        "description": "4,561 lbs"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Powertrain",
+                        "description": "Dual Motor"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Supercharging Max",
+                        "description": "250 kW"
+                    }
+                ]
+            },
+            "plaid": {
+                "left": [
+                    {
+                        "id": 0,
+                        "title": "Range",
+                        "description": "396 mi (EPA est.)"
+                    },
+                    {
+                        "id": 1,
+                        "title": "1/4 Mile",
+                        "description": "9.23@155 mph trap speed"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Peak Power",
+                        "description": "1,020 hp"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Wheels",
+                        "description": "19' or 21'"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Cargo",
+                        "description": "28 cu ft"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Weight",
+                        "description": "4,766 lbs"
+                    }
+                ],
+                "right": [
+                    {
+                        "id": 0,
+                        "title": "Acceleration",
+                        "description": "1.99 s 0-60 mph*",
+                        "sidenote": "*with rollout subtracted"
+                    },
+                    {
+                        "id": 1,
+                        "title": "Top Speed",
+                        "description": "200 mph†",
+                        "sidenote": "†when equipped with the proper wheels and tires (available fall 2021)"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Drag Coefficient",
+                        "description": "0.208 Cd"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Powertrain",
+                        "description": "Tri Motor"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Supercharging Max",
+                        "description": "250 kW"
+                    }
+                ]
+            }
         }
 
     },

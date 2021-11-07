@@ -1,11 +1,16 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { chatterState, chatter } from '../../features/chat/toggleChatSlice'
+
 import styled from 'styled-components'
 import ChatForm from './ChatForm'
 
 function Chat() {
+    const value = useSelector(chatterState);
+    const dispatch = useDispatch();
     return (
         <>
-            <ChatButton>
+            <ChatButton onClick={() => dispatch(chatter())}>
                 <img src="./images/chat.svg" alt="start chat" />
             </ChatButton>
             <ChatForm />
@@ -27,6 +32,7 @@ const ChatButton = styled.button`
     padding: 13px;
     border: none;
     cursor: pointer;
+    z-index: 10;
     box-shadow: -3px -3px 2px rgba(0, 0, 0, .05),
                 -3px 3px 2px rgba(0, 0, 0, .05),
                 3px 3px 2px rgba(0, 0, 0, .05),
