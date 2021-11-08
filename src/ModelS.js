@@ -5,6 +5,7 @@ import Interior from './components/models/Interior'
 import InteriorCarousel from './components/models/InteriorCarousel'
 import Grid from './components/models/Grid'
 import Category from './components/models/Category'
+import Electrics from './components/models/Electrics'
 import Specs from './components/models/Specs'
 import Order from './components/models/Order'
 
@@ -22,7 +23,7 @@ function ModelS() {
             <Hero />
             <Interior />
             <InteriorCarousel />
-            <Grid 
+            <Grid
                 grid={interiorgrid}
             />
             <Category
@@ -32,22 +33,23 @@ function ModelS() {
                 description={models.performanceSection.description}
                 image={models.performanceSection.image}
             />
-            <Category 
-                stats={models.designSection.stats} 
-                type="Exterior" 
-                title={models.designSection.title} 
-                description={models.designSection.description} 
-                image={models.designSection.image} 
+            <Electrics />
+            <Category
+                stats={models.designSection.stats}
+                type="Exterior"
+                title={models.designSection.title}
+                description={models.designSection.description}
+                image={models.designSection.image}
             />
-            <Grid 
+            <Grid
                 grid={exteriorgrid}
             />
-            <Category 
-                stats={models.rangeSection.stats} 
-                type="Range" 
-                title={models.rangeSection.title} 
-                description={models.rangeSection.description} 
-                image={models.rangeSection.image} 
+            <Category
+                stats={models.rangeSection.stats}
+                type="Range"
+                title={models.rangeSection.title}
+                description={models.rangeSection.description}
+                image={models.rangeSection.image}
             />
             <Specs />
             <Order />
