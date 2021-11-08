@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 function Electrics() {
+    const [plaidselected, setPlaidselected] = useState(false);
     return (
         <ElectricsContainer>
             <ElectricsIntro>
                 <h1>Electric Powertrain</h1>
                 <p>Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions.</p>
             </ElectricsIntro>
-            <ElectricsImage />
+            {plaidselected ? <PlaidElectricsImage /> : <ElectricsImage />}            
             <ElectricsText>
-                <ModelSElectrics>
+                <ModelSElectrics onClick={() => {setPlaidselected(false)}} style={!plaidselected ? {outline: '3px solid black', transform: 'scale(1.015)', opacity: '1'} : {borderTop: '3px solid black'}}>
                     <div>
                         <h3>Model S</h3>
                         <p>Dual Motor All-Wheel Drive platform allows for the longest range, and now delivers insane power and acceleration.</p>
@@ -30,7 +31,7 @@ function Electrics() {
                         </div>
                     </ModelSElectricsFeatures>
                 </ModelSElectrics>
-                <PlaidElectrics>
+                <PlaidElectrics onClick={() => setPlaidselected(true)} style={plaidselected ? {outline: '3px solid black', transform: 'scale(1.015)', opacity: '1'} : {borderTop: '3px solid black'}}>
                     <div>
                         <h3>Model S Plaid</h3>
                         <p>Tri Motor All-Wheel Drive platform with torque vectoring features three independent motors, each with a carbon-sleeved rotor that maintains peak power output all the way to top speed.</p>
@@ -99,11 +100,16 @@ const ElectricsImage = styled.div`
     }
 `
 
+const PlaidElectricsImage = styled(ElectricsImage)`
+    background-image: url(./images/Model-S-Performance-Tri-Motor-Desktop.jpg);
+`
+
 const ElectricsText = styled.div`
     display: flex;
     max-width: 1000px;
     min-height: 280px;
     padding: 30px 60px;
+    position: relative;
 
     p {
         font-size: 14px;
@@ -121,12 +127,13 @@ const ElectricsText = styled.div`
 const ModelSElectrics = styled.div`
     width: 50%;
     padding: 18px 25px;
-    border: 3px solid black;
+    outline-top: 3px solid black;
     margin: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     opacity: .7;
+    transition: .3s;
 
     h3 {
         margin-bottom: 10px;

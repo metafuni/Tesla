@@ -7,6 +7,13 @@ function CarouselItem() {
     const value = useSelector(carouselState);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            dispatch(increase());
+        }, 5000);
+        return () => clearInterval(timer);
+      });
+
     return (
         <>
                 <ItemContainer>
