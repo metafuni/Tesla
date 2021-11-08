@@ -6,6 +6,7 @@ import InteriorCarousel from './components/models/InteriorCarousel'
 import Grid from './components/models/Grid'
 import Category from './components/models/Category'
 import Electrics from './components/models/Electrics'
+import Safety from './components/models/Safety'
 import Specs from './components/models/Specs'
 import Order from './components/models/Order'
 
@@ -51,6 +52,7 @@ function ModelS() {
                 description={models.rangeSection.description}
                 image={models.rangeSection.image}
             />
+            <Safety />
             <Specs />
             <Order />
         </>
