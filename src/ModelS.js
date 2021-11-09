@@ -5,6 +5,7 @@ import Interior from './components/models/Interior'
 import InteriorCarousel from './components/models/InteriorCarousel'
 import Grid from './components/models/Grid'
 import Category from './components/models/Category'
+import VideoCategory from './components/models/VideoCategory'
 import Electrics from './components/models/Electrics'
 import Safety from './components/models/Safety'
 import Specs from './components/models/Specs'
@@ -51,6 +52,14 @@ function ModelS() {
                 title={models.rangeSection.title}
                 description={models.rangeSection.description}
                 image={models.rangeSection.image}
+            />
+            <VideoCategory 
+                stats={models.autopilotSection.stats}
+                type="Autopilot"
+                title={models.autopilotSection.title}
+                description={models.autopilotSection.description}
+                video={models.autopilotSection.video}
+                image={models.autopilotSection.stats[2].image}
             />
             <Safety />
             <Specs />

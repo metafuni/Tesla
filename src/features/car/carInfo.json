@@ -158,6 +158,29 @@
                 }
             ]
         },
+        "autopilotSection": {
+            "title": "Future of Driving",
+            "description": "Autopilot enables your car to steer, accelerate and brake automatically within its lane under your active supervision, assisting with the most burdensome parts of driving. With over-the-air software updates, the latest enhancements are available instantly.",
+            "video": "./images/WCL9WK_autopilot.mp4-2000_QQHSUM.mp4",
+            "stats": [
+                {
+                    "id": 0,
+                    "title": "360°",
+                    "description": "Rear, side and forward-facing cameras provide maximum visibility"
+                },
+                {
+                    "id": 1,
+                    "title": "250m",
+                    "description": "Supercharge up to 200 miles in 15 minute"
+                },
+                {
+                    "id": 2,
+                    "title": "Ultrasonic Sensors",
+                    "description": "Detects nearby cars, helps prevent potential collisions and assists with parking",
+                    "image": "./images/autopilot.png"
+                }
+            ]
+        },
         "specs": {
             "models": {
                 "left": [

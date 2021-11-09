@@ -12,7 +12,19 @@ function Safety() {
                 </SafetyDescription>
                 <SafetyButton>order now</SafetyButton>
             </SafetyText>
-            <SafetyImage />
+            <SafetyImage>
+                <ul>
+                    <li>
+                        <span>Front-Impact Protection</span>
+                    </li>
+                    <li>
+                        <span>Side-Impact Protection</span>
+                    </li>
+                    <li>
+                        <span>Very Low Rollover Risk</span>
+                    </li>
+                </ul>
+            </SafetyImage>
         </SafetyContainer>
     )
 }
@@ -76,4 +88,55 @@ const SafetyImage = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    ul {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        color: black;
+        position: relative;
+
+        li {
+            list-style: none;
+            position: absolute;
+            font-size: 14px;
+            height: 200px;
+            max-width: 18%;
+
+            span {
+                display: block;
+                margin-left: 10px;
+            }
+        }
+
+        li:before {
+            content: '';
+            background: black;
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 2px;
+        }
+
+        li:nth-child(2) {
+            top: 4%;
+            left: 39%;
+            width: 140.25px;
+        }
+
+        li:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: white;
+            border: 2px solid black;
+            border-radius: 8px;
+            height: 5px;
+            width: 5px;
+        }
+    }
 `
+
