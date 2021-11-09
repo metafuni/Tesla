@@ -10,17 +10,18 @@ import Electrics from './components/models/Electrics'
 import Safety from './components/models/Safety'
 import Specs from './components/models/Specs'
 import Order from './components/models/Order'
+import styled from 'styled-components'
 
 import { useSelector } from 'react-redux'
 import { selectCars } from './features/car/CarSlice'
 
-function ModelS() {
+function ModelS({ blurState }) {
     const models = useSelector(selectCars)[0];
     const interiorgrid = useSelector(selectCars)[0].interiorgrid;
     const exteriorgrid = useSelector(selectCars)[0].exteriorgrid;
 
     return (
-        <>
+        <ModelSContainer blur={blurState}>
             <Chat />
             <Hero />
             <Interior />
@@ -64,9 +65,14 @@ function ModelS() {
             <Safety />
             <Specs />
             <Order />
-        </>
+        </ModelSContainer>
     )
 }
 
 export default ModelS
 
+const ModelSContainer = styled.div`
+    filter: ${props => props.blur ? 'blur(4px)' : 'blur(0)'};
+    opacity: ${props => props.blur ? '.6' : '1'};
+    transition: .3s;
+`

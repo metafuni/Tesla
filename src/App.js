@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Header setBlur={setBlur} />
       {/* <Home blurState={blurState} /> */}
-      <ModelS />
+      <ModelS blurState={blurState} />
     </div>
   );
 }
