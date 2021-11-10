@@ -1,11 +1,6 @@
 import React from 'react'
-import Home from './Home'
-import ModelS from '../ModelS'
 import { useSelector, useDispatch } from 'react-redux'
-import {
-    BrowserRouter as Router,
-    Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { selectCars } from '../features/car/CarSlice'
 import { selectMenu } from '../features/car/CarSlice'
 import { togglerState, toggler } from '../features/toggle/toggleSlice'
@@ -22,46 +17,44 @@ function Header({ setBlur }) {
 
     return (
         <Container>
-            <Router>
-                <Link to="/">
-                    <Logo src="/images/logo.svg"></Logo>
+            <Link to="/">
+                <Logo src="/images/logo.svg"></Logo>
+            </Link>
+            <CenterMenu show={value}>
+                <Link to="/models">
+                    Model S
                 </Link>
-                <CenterMenu show={value}>
-                    <Link to="/models">
-                        Model S
-                    </Link>
-                    {cars && cars.slice(1).map((item, index) => {
-                        return (
-                            <Link key={index} to="/">
-                                {item.title}
-                            </Link>
-                        )
-                    })}
-                </CenterMenu>
-                <RightMenu>
-                    <Link to="/">
-                        Shop
-                    </Link>
-                    <Link to="/">
-                        Account
-                    </Link>
-                    <MenuButton to="/" onClick={() => { dispatch(toggler()); setBlur() }}>
-                        Menu
-                    </MenuButton>
-                </RightMenu>
-                <BurgerNav show={value}>
-                    <CustomWrapper>
-                        <CustomClose onClick={() => { dispatch(toggler()); setBlur() }} />
-                    </CustomWrapper>
-                    {menu && menu.map((item, index) => {
-                        return (
-                            <li key={index} to="/">
-                                {item.title}
-                            </li>
-                        )
-                    })}
-                </BurgerNav>
-            </Router>
+                {cars && cars.slice(1).map((item, index) => {
+                    return (
+                        <Link key={index} to="/">
+                            {item.title}
+                        </Link>
+                    )
+                })}
+            </CenterMenu>
+            <RightMenu>
+                <Link to="/">
+                    Shop
+                </Link>
+                <Link to="/">
+                    Account
+                </Link>
+                <MenuButton to="/" onClick={() => { dispatch(toggler()); setBlur() }}>
+                    Menu
+                </MenuButton>
+            </RightMenu>
+            <BurgerNav show={value}>
+                <CustomWrapper>
+                    <CustomClose onClick={() => { dispatch(toggler()); setBlur() }} />
+                </CustomWrapper>
+                {menu && menu.map((item, index) => {
+                    return (
+                        <li key={index} to="/">
+                            {item.title}
+                        </li>
+                    )
+                })}
+            </BurgerNav>
         </Container>
     )
 }

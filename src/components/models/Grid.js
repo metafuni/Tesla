@@ -11,17 +11,17 @@ function Grid({ grid }) {
             <GridComponent>
                 {grid.map(el => (
                     <GridRow key={el.id}>
-                            <GridImage image={el.image} />
+                        <GridImage image={el.image} />
                         <GridDescription>
                             <Fade bottom>
-                            <GridText>
-                                <GridTitle>
-                                    {el.title}
-                                </GridTitle><br></br>
-                                <GridParagraph>
-                                    {el.description}
-                                </GridParagraph>
-                            </GridText>
+                                <GridText>
+                                    <GridTitle>
+                                        {el.title}
+                                    </GridTitle><br></br>
+                                    <GridParagraph>
+                                        {el.description}
+                                    </GridParagraph>
+                                </GridText>
                             </Fade>
                         </GridDescription>
                     </GridRow>

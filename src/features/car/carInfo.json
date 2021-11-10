@@ -181,6 +181,62 @@
                 }
             ]
         },
+        "travelSection": {
+            "title": "Freedom to Travel",
+            "description":"Enter a destination on your touchscreen and Trip Planner will automatically calculate your route with Superchargers along the way.",
+            "items": [
+                {
+                    "id": 0,
+                    "title": "San Jose to Los Angeles",
+                    "distance": "340 miles",
+                    "image": "./images/map_san_jose_bg@2x.jpg"
+                },
+                {
+                    "id": 1,
+                    "title": "Berkeley to Lake Tahoe",
+                    "distance": "178 miles",
+                    "image": "./images/map_san_jose_bg@2x.jpg"
+                },{
+                    "id": 2,
+                    "title": "Manhattan to Boston",
+                    "distance": "211 miles",
+                    "image": "./images/map_san_jose_bg@2x.jpg"
+                },{
+                    "id": 3,
+                    "title": "Fort Lauderdale to Orlando",
+                    "distance": "195 miles",
+                    "image": "./images/map_san_jose_bg@2x.jpg"
+                }
+            ]
+        },
+        "featuresSection": {
+            "title": "Features",
+            "description":"Full Self-Driving Capability introduces additional features and improves existing functionality to make your car more capable over time including:",
+            "items": [
+                {
+                    "id": 0,
+                    "title": "Navigate on Autopilot",
+                    "description": "Active guidance from on-ramp to off-ramp",
+                    "video": "./images/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4"
+                },
+                {
+                    "id": 1,
+                    "title": "Auto Lane Change",
+                    "description": "Automatically change lanes while driving on the highway",
+                    "video": "./images/A7I6LP_lane_change_0.mp4-2000_PYSUF4.mp4"
+                },{
+                    "id": 2,
+                    "title": "Summon",
+                    "description": "Automatically retrieve your car",
+                    "video": "./images/ZZNM9S_summon_1.mp4-2000_OQKCDY.mp4"
+                },{
+                    "id": 3,
+                    "title": "Autopark",
+                    "description": "Parallel and perpendicular parking with a single touch",
+                    "video": "./images/WM5XUG_parking.mp4-2000_EQUBJE.mp4"
+                }
+            ]
+        },
         "specs": {
             "models": {
                 "left": [
