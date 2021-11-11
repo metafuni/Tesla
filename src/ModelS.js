@@ -8,6 +8,7 @@ import Category from './components/models/Category'
 import VideoCategory from './components/models/VideoCategory'
 import Electrics from './components/models/Electrics'
 import Safety from './components/models/Safety'
+import Features from './components/models/FeaturesSection'
 import Specs from './components/models/Specs'
 import Order from './components/models/Order'
 import styled from 'styled-components'
@@ -63,6 +64,7 @@ function ModelS({ blurState }) {
                 image={models.autopilotSection.stats[2].image}
             />
             <Safety />
+            <Features />
             <Specs />
             <Order />
         </ModelSContainer>

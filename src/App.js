@@ -6,8 +6,6 @@ import ModelS from './ModelS'
 import Header from './components/Header'
 import AnimatedRoute from 'react-animated-routes'
 
-import './App.css';
-
 function App() {
 
   const routes = [

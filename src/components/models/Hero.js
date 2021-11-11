@@ -155,22 +155,8 @@ const StatSubtitle = styled.div`
 `
 
 const HeroButton = styled.button`
-    background-color: transparent;
-    height: 40px;
-    width: 180px;
-    max-width: 450px;
     color: white;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
     border: 3px solid white;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    margin: 12px;
-    cursor: pointer;
-    transition: .3s;
 
     @media (max-width: 640px) {
         width: 90vw;

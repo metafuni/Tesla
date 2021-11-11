@@ -20,8 +20,8 @@ function Chat() {
 
 export default Chat
 
-const ChatButton = styled.button`
-    position: fixed;
+const ChatButton = styled.div`
+    position: fixed; 
     display: flex;
     justify-content: center;
     align-items: center;

@@ -215,22 +215,26 @@
             "items": [
                 {
                     "id": 0,
+                    "select": "autopilot",
                     "title": "Navigate on Autopilot",
                     "description": "Active guidance from on-ramp to off-ramp",
                     "video": "./images/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4"
                 },
                 {
                     "id": 1,
+                    "select": "lane_change",
                     "title": "Auto Lane Change",
                     "description": "Automatically change lanes while driving on the highway",
                     "video": "./images/A7I6LP_lane_change_0.mp4-2000_PYSUF4.mp4"
                 },{
                     "id": 2,
+                    "select": "summon",
                     "title": "Summon",
                     "description": "Automatically retrieve your car",
                     "video": "./images/ZZNM9S_summon_1.mp4-2000_OQKCDY.mp4"
                 },{
                     "id": 3,
+                    "select": "parking",
                     "title": "Autopark",
                     "description": "Parallel and perpendicular parking with a single touch",
                     "video": "./images/WM5XUG_parking.mp4-2000_EQUBJE.mp4"

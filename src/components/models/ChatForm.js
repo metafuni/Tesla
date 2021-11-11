@@ -99,7 +99,7 @@ const ChatHeader = styled.div`
     box-shadow: 0px 1px 1px rgba(0, 0, 0, .1)
 `
 
-const CloseButton = styled.button`
+const CloseButton = styled.div`
     background: transparent;
     border: none;
     font-weight: bold;
