@@ -156,6 +156,7 @@ const FormContainer = styled.form`
         background: rgb(62, 106, 225);
         color: white;
         transition: .3s;
+        width: 90%;
     }
 
     button:hover {

@@ -7,6 +7,7 @@ import Grid from './components/models/Grid'
 import Category from './components/models/Category'
 import VideoCategory from './components/models/VideoCategory'
 import Electrics from './components/models/Electrics'
+import TravelSection from './components/models/TravelSection'
 import Safety from './components/models/Safety'
 import Features from './components/models/FeaturesSection'
 import Specs from './components/models/Specs'
@@ -63,6 +64,7 @@ function ModelS({ blurState }) {
                 video={models.autopilotSection.video}
                 image={models.autopilotSection.stats[2].image}
             />
+            <TravelSection />
             <Safety />
             <Features />
             <Specs />
