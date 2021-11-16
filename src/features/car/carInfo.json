@@ -161,7 +161,7 @@
         "autopilotSection": {
             "title": "Future of Driving",
             "description": "Autopilot enables your car to steer, accelerate and brake automatically within its lane under your active supervision, assisting with the most burdensome parts of driving. With over-the-air software updates, the latest enhancements are available instantly.",
-            "video": "./images/WCL9WK_autopilot.mp4-2000_QQHSUM.mp4",
+            "video": "./images/autopilot.mp4",
             "stats": [
                 {
                     "id": 0,

@@ -35,7 +35,7 @@ function TravelSection() {
             <TravelImageContainer route={travelselected}>
                 <div style={{ background: 'transparent', width: '100%' }}>
                     <TravelImage src={`./images/${travelselected}.svg`} path={routeselected} />
-                    <div distance={distanceselected}></div>
+                    <div></div>
                 </div>
             </TravelImageContainer>
 
@@ -126,19 +126,19 @@ const TravelImageContainer = styled.div`
             inherits: false;
           }
 
-            animation: counter 3s forwards ease-in-out;
+            animation: counter 5s infinite ease-in-out;
             counter-reset: num var(--num);
             font: 800 40px system-ui;
             padding: 2rem;
-          
-          @keyframes counter {
-            from {
-              --num: 0;
+
+            @keyframes counter {
+                from {
+                  --num: 0;
+                }
+                to {
+                  --num: 178;
+                }
             }
-            to {
-              --num: 211;
-            }
-          }
     }
 
     > div div::after {
