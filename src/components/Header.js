@@ -21,12 +21,12 @@ function Header({ setBlur }) {
                 <Logo src="/images/logo.svg"></Logo>
             </Link>
             <CenterMenu show={value}>
-                <Link to="/models">
-                    Model S
+                <Link to="/models" id="models">
+                    <button>Model S*</button>
                 </Link>
                 {cars && cars.slice(1).map((item, index) => {
                     return (
-                        <Link key={index} to="/">
+                        <Link key={index} to="/" style={{cursor: 'not-allowed'}}>
                             {item.title}
                         </Link>
                     )
@@ -90,6 +90,12 @@ const CenterMenu = styled.div`
         position: relative;
         text-decoration: none;
         padding: 0 12px;
+    }
+    #models {
+        padding: 0;
+    }
+    #models:after {
+        display: none;
     }
     a::after {
         content: "";

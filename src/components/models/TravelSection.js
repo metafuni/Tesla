@@ -14,7 +14,7 @@ function TravelSection() {
 
     const findRoute = () => {
         for (const item in travels.items) {
-            if(travels.items[item].select === travelselected) {
+            if (travels.items[item].select === travelselected) {
                 setDistanceselected(travels.items[item].distance)
                 setRouteselected(travels.items[item].route)
             }
@@ -23,7 +23,7 @@ function TravelSection() {
 
     useEffect(() => findRoute(), [travelselected])
 
-    console.log(`./images/${travelselected}.svg`)
+    console.log(routeselected)
 
     return (
         <TravelContainer>
@@ -36,6 +36,9 @@ function TravelSection() {
                 <div style={{ background: 'transparent', width: '100%' }}>
                     <TravelImage src={`./images/${travelselected}.svg`} path={routeselected} />
                     <div></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1225 562" fill="none" style={{ opacity: '.6', zIndex: '0', transform: 'translate(0, -65px) scale(1.22)' }}>
+                        <path d={routeselected} stroke="#E82127" strokeWidth="3" />
+                    </svg>
                 </div>
             </TravelImageContainer>
 
@@ -91,7 +94,7 @@ const TravelIntro = styled.div`
 const TravelText = styled.div`
     display: flex;
     max-width: 1000px;
-    min-height: 280px;
+    min-height: 220px;
     padding: 30px 60px;
     position: relative;
 
@@ -120,6 +123,7 @@ const TravelImageContainer = styled.div`
     background-repeat: no-repeat;
 
     > div div {
+        opacity: 0;
         @property --num {
             syntax: "<integer>";
             initial-value: 0;

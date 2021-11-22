@@ -78,7 +78,7 @@ const FeaturesIntro = styled.div`
 const FeaturesText = styled.div`
     display: flex;
     max-width: 1000px;
-    min-height: 280px;
+    min-height: 245px;
     padding: 30px 60px;
     position: relative;
 
