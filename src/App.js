@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import Home from './components/Home'
 import ModelS from './ModelS'
@@ -7,11 +7,6 @@ import Header from './components/Header'
 import AnimatedRoute from 'react-animated-routes'
 
 function App() {
-
-  const routes = [
-    { path: '/', name: 'Home', Component: Home },
-    { path: '/models', name: 'ModelS', Component: ModelS },
-  ]
   const [blurState, setBlurState] = useState(false)
 
   const setBlur = () => {

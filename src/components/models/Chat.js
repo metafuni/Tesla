@@ -1,12 +1,11 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { chatterState, chatter } from '../../features/chat/toggleChatSlice'
+import { useDispatch } from 'react-redux'
+import { chatter } from '../../features/chat/toggleChatSlice'
 
 import styled from 'styled-components'
 import ChatForm from './ChatForm'
 
 function Chat() {
-    const value = useSelector(chatterState);
     const dispatch = useDispatch();
     return (
         <>

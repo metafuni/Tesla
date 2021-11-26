@@ -20,15 +20,15 @@ function CarouselItem() {
                     <ItemImage value={value}>
                         <ImageMask>
                             <button onClick={() => dispatch(decrease())}>
-                                <img src="./images/arrow.svg" alt="previous image" />
+                                <img src="./images/arrow.svg" alt="previous item" />
                             </button>
                             <button onClick={() => dispatch(increase())}>
-                                <img src="./images/arrow.svg" alt="next image" />
+                                <img src="./images/arrow.svg" alt="next item" /> 
                             </button>
                         </ImageMask>
                     </ItemImage>
                     <ItemDescriptionContainer>
-                        <ItemBullets value={value}>
+                        <ItemBullets value={value}> 
                             <Bullet />
                             <Bullet />
                             <Bullet />

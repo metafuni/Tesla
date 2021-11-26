@@ -1,16 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal'
-import { useSelector } from 'react-redux'
-import { selectCars } from '../../features/car/CarSlice'
 
 function VideoCategory({ stats, type, title, description, image, video }) {
-    const models = useSelector(selectCars)[0];
-
     return (
         <CategoryContainer>
             <CategoryVideo>
-                <video preload="auto" autoplay="autoplay" muted loop>
+                <video preload="auto" autoPlay="autoplay" muted loop>
                     <source src={video} type="video/mp4"></source>
                     Your Browser does not support the video element
                 </video>

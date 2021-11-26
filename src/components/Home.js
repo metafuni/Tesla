@@ -1,7 +1,4 @@
 import React from 'react'
-
-import ModelS from '../ModelS'
-import Footer from './Footer'
 import styled from 'styled-components'
 import Section from './Section'
 

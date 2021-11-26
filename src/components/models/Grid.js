@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal'
-import { useSelector } from 'react-redux'
-import { selectCars } from '../../features/car/CarSlice'
 
 function Grid({ grid }) {
 

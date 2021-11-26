@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import Fade from 'react-reveal'
 import { useSelector } from 'react-redux'
 import { selectCars } from '../../features/car/CarSlice'
 
@@ -9,22 +8,20 @@ function TravelSection() {
     const firstitem = travels.items[0]
 
     const [travelselected, setTravelSelected] = useState(firstitem.select);
-    const [distanceselected, setDistanceselected] = useState(firstitem.distance);
+    // const [distanceselected, setDistanceselected] = useState(firstitem.distance);
     const [routeselected, setRouteselected] = useState(firstitem.route)
 
     const findRoute = () => {
         for (const item in travels.items) {
             if (travels.items[item].select === travelselected) {
-                setDistanceselected(travels.items[item].distance)
+                // setDistanceselected(travels.items[item].distance)
                 setRouteselected(travels.items[item].route)
             }
         }
     }
 
-    useEffect(() => findRoute(), [travelselected])
-
-    console.log(routeselected)
-
+    useEffect(() => findRoute())
+ 
     return (
         <TravelContainer>
             <TravelIntro>
@@ -45,13 +42,14 @@ function TravelSection() {
             <TravelText>
                 {travels.items.map(el => (
                     <TravelItem onClick={() => { setTravelSelected(el.select) }}
+                        key={el.title}
                         style={travelselected === el.select ?
                             { outline: '3px solid black', transform: 'scale(1.015)', opacity: '1' } :
                             { borderTop: '3px solid black' }}
                     >
                         <div>
                             <h3>{el.title}</h3>
-                            <h2>{el.distance}</h2>
+                            {/* <h2>{el.distance}</h2> */}
                         </div>
                     </TravelItem>
                 ))}

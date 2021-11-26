@@ -1,12 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal'
-import { useSelector } from 'react-redux'
-import { selectCars } from '../../features/car/CarSlice'
 
 function Category({ stats, type, title, description, image }) {
-    const models = useSelector(selectCars)[0];
-
     return (
         <CategoryContainer>
             <CategoryImage image={image} >

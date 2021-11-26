@@ -25,12 +25,12 @@ function Specs() {
                 <SpecsDescription>
                     <SpecsLeft>
                         {selected === "plaid" ? plaid.left.map(el => (
-                            <SpecTile>
+                            <SpecTile key={el.title}>
                                 <h4>{el.title}</h4>
                                 <p>{el.description}</p>
                             </SpecTile>
                         )) : models.left.map(el => (
-                            <SpecTile>
+                            <SpecTile key={el.title}>
                                 <h4>{el.title}</h4>
                                 <p>{el.description}</p>
                             </SpecTile>
@@ -38,13 +38,13 @@ function Specs() {
                     </SpecsLeft>
                     <SpecsRight>
                         {selected === "plaid" ? plaid.right.map(el => (
-                            <SpecTile>
+                            <SpecTile key={el.title}>
                                 <h4>{el.title}</h4>
                                 <p>{el.description}</p>
                                 {el.sidenote && <p>{el.sidenote}</p>}
                             </SpecTile>
                         )): models.right.map(el => (
-                            <SpecTile>
+                            <SpecTile key={el.title}>
                                 <h4>{el.title}</h4>
                                 <p>{el.description}</p>
                                 {el.sidenote && <p>{el.sidenote}</p>}

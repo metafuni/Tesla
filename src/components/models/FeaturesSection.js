@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import Fade from 'react-reveal'
 import { useSelector } from 'react-redux'
 import { selectCars } from '../../features/car/CarSlice'
 
@@ -21,7 +20,7 @@ function FeaturesSection() {
                 <p>{features.description}</p>
             </FeaturesIntro>
 
-            <video id="video" preload="auto" autoplay="autoplay" muted loop>
+            <video id="video" preload="auto" autoPlay="autoplay" muted loop>
                 <source src={`./images/${selected}.mp4`} type="video/mp4"></source>
                 Your Browser does not support the video element
             </video>
@@ -29,6 +28,7 @@ function FeaturesSection() {
             <FeaturesText>
                 {features.items.map(el => (
                     <FeaturesItem onClick={() => { setSelected(el.select) }} 
+                        key={el.title}
                         style={selected === el.select ? 
                             { outline: '3px solid black', transform: 'scale(1.015)', opacity: '1' } : 
                             { borderTop: '3px solid black' }}
