@@ -49,7 +49,7 @@ function TravelSection() {
                     >
                         <div>
                             <h3>{el.title}</h3>
-                            {/* <h2>{el.distance}</h2> */}
+                            <h2>{el.distance}</h2>
                         </div>
                     </TravelItem>
                 ))}
